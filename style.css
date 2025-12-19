@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: #5f5f5f;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor {
+    width: 920px;
+    height: 280px;
+    margin: 0 auto;
+    
+    position: relative;
+
+    background: linear-gradient(#8bdaff7c, transparent) #eafffd;/*linear-gradient(#90ebff, white);*/
+    transition: background-color 1s linear;
+    overflow: hidden;
+}
+
+.mediodia {
+    background-color: #ffdcf3;
+}
+
+.tarde {
+    background-color: #b8705e;
+}
+
+.noche {
+    background-color: #393353;
+}
+
+.dino {
+
+    width: 85px;
+    height: 56px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 54px;
+    z-index: 4;
+
+}
+
+/* Dibujo del cerdo en CSS (3D estilizado) */
+.dino { width: 140px; height: 100px; }
+.dino .pig{ position: relative; width:100%; height:100%; transform-style: preserve-3d; perspective:600px; }
+.pig-body{
+    position: absolute; left: 20px; top: 28px;
+    width: 84px; height: 58px;
+    background: linear-gradient(180deg,#ff9fb1,#ff6f98);
+    border-radius: 40px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25), inset 0 -6px 10px rgba(0,0,0,0.06);
+    transform: rotateX(8deg);
+}
+.pig-head{
+    position: absolute; left: 6px; top: 6px;
+    width: 60px; height: 46px;
+    background: linear-gradient(180deg,#ffb6c6,#ff8aa5);
+    border-radius: 38px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    transform: translateZ(8px) rotateX(6deg);
+}
+.pig-ear{ position:absolute; width:12px; height:12px; background:#ff9fb1; border-radius:50% 50% 40% 40%; top:-6px; }
+.pig-ear.ear-left{ left:6px; transform: rotate(-20deg); }
+.pig-ear.ear-right{ right:6px; transform: rotate(20deg); }
+.pig-eye{ position:absolute; width:6px; height:6px; background:#2b2b2b; border-radius:50%; top:16px; }
+.pig-eye.left{ left:18px; }
+.pig-eye.right{ right:18px; }
+.pig-snout{ position:absolute; left:10px; top:22px; width:34px; height:20px; background:#ff8599; border-radius:30px; box-shadow: inset 0 -3px 6px rgba(0,0,0,0.08); }
+.pig-nostril{ position:absolute; width:6px; height:6px; background:#3b1f25; border-radius:50%; top:7px; }
+.pig-nostril.left{ left:8px; }
+.pig-nostril.right{ right:8px; }
+.pig-leg{ position:absolute; width:10px; height:18px; background:linear-gradient(#ff7f9a,#d95b74); bottom:6px; border-radius:6px; }
+.pig-leg.leg1{ left:28px; }
+.pig-leg.leg2{ left:44px; }
+.pig-leg.leg3{ left:64px; }
+.pig-leg.leg4{ left:78px; }
+.pig-tail{ position:absolute; width:8px; height:8px; right:6px; top:42px; border-radius:50%; box-shadow: 8px 0 0 2px #ff8aa5 inset; transform: rotate(30deg); }
+
+.dino-corriendo{ animation: pigBounce 0.45s ease-in-out infinite; }
+@keyframes pigBounce{ 0%{ transform: translateY(0) } 50%{ transform: translateY(-8px) } 100%{ transform: translateY(0) } }
+
+.nombre{
+    position: absolute;
+    left: 150px;
+    bottom: 80px;
+    z-index: 3;
+    color: #ffffff;
+    font-family: Verdana;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* eliminar animaciones basadas en sprites (no se usan) */
+.dino-estrellado { opacity: 0.6; transform: translateY(4px) rotate(-6deg); }
+
+.suelo {
+    width: 200%;
+    height: 42px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    /* Suelo dibujado en CSS para evitar dependencias de imagen */
+    background: linear-gradient(#6b4b36, #4b2f20);
+    box-shadow: inset 0 6px 10px rgba(255,255,255,0.03);
+}
+
+.cactus, .cactus2, .cactus3{
+    position: absolute;
+    bottom: 20px;
+    left: 600px;
+    z-index: 2;
+    background: linear-gradient(#2f8b3b,#1f6b2b);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.cactus{ width:40px; height:40px }
+.cactus2{ width:52px; height:44px }
+.cactus3{ width:72px; height:46px }
+.cactus::before{ content:""; position:absolute; left:6px; right:6px; top:-6px; height:8px; background:linear-gradient(#3fbf53,#2d8b3b); border-radius:4px }
+
+.nube{
+    width: 96px;
+    height: 30px;
+
+    position: absolute;
+    z-index: 0;
+
+    background: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.score{
+    width: 100px;
+    height: 34px;
+
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    z-index: 10;
+
+    color: #222222;
+    font-family: Verdana;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    background: rgba(255,255,255,0.7);
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.game-over{
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: 700;
+}
+
+.game-over{cursor:pointer; background: rgba(0,0,0,0.5); padding: 10px 0;}
+
+/* se eliminó la animación por sprite (no necesaria) */

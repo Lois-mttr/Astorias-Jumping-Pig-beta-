@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Salta, Nelio!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- favicon removed (resource not present) -->
+    <audio id="jump" src="res/audio/jump.mp3"></audio>
+    <audio id="lose" src="res/audio/lose.mp3"></audio>
+    <audio id="score" src="res/audio/score.mp3"></audio>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="suelo"></div>
+        <div class="dino" role="img" aria-label="Nelio, el cerdo">
+            <div class="pig" aria-hidden="true">
+                <div class="pig-body"></div>
+                <div class="pig-head">
+                    <div class="pig-ear ear-left"></div>
+                    <div class="pig-ear ear-right"></div>
+                    <div class="pig-eye left"></div>
+                    <div class="pig-eye right"></div>
+                    <div class="pig-snout">
+                        <div class="pig-nostril left"></div>
+                        <div class="pig-nostril right"></div>
+                    </div>
+                </div>
+                <div class="pig-leg leg1"></div>
+                <div class="pig-leg leg2"></div>
+                <div class="pig-leg leg3"></div>
+                <div class="pig-leg leg4"></div>
+                <div class="pig-tail"></div>
+            </div>
+        </div>
+        <div class="nombre">Nelio</div>
+        <div class="score">0</div>
+    </div>
+    <div class="game-over" role="button" tabindex="0">Nelio perdió — Haz clic o presiona R para reiniciar</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
