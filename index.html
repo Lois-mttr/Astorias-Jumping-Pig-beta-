@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐷 Astorias Jumping Pig</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐷 Astorias Jumping Pig</h1>
+            <p class="subtitle">Inspired by fun times with Astorias and friends!</p>
+        </header>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div id="gameOver" class="game-over hidden">
+                <h2>Game Over!</h2>
+                <p>Score: <span id="finalScore">0</span></p>
+                <p>High Score: <span id="highScore">0</span></p>
+                <button id="restartBtn">Play Again</button>
+            </div>
+            <div id="startScreen" class="start-screen">
+                <h2>Welcome!</h2>
+                <p>Press <strong>SPACEBAR</strong> or <strong>CLICK</strong> to jump</p>
+                <p>Avoid the obstacles and score points!</p>
+                <button id="startBtn">Start Game</button>
+            </div>
+        </div>
+        
+        <div class="score-display">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="high-score">High Score: <span id="displayHighScore">0</span></div>
+        </div>
+        
+        <div class="controls-info">
+            <p>🎮 Controls: Press <kbd>SPACE</kbd> or <kbd>CLICK</kbd> to jump</p>
+        </div>
+        
+        <footer>
+            <p>Made with ❤️ for Astorias and friends | 
+               <a href="https://github.com/Lois-mttr/Astorias-Jumping-Pig-beta-" target="_blank">View on GitHub</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
