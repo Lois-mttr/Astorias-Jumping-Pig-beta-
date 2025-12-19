@@ -12,6 +12,9 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
+// Game Constants
+const COLLISION_PADDING = 10; // Padding for more forgiving collision detection
+
 // Game State
 let gameState = {
     isRunning: false,
@@ -139,8 +142,8 @@ class Obstacle {
     
     collidesWith(player) {
         return (
-            player.x < this.x + this.width - 10 &&
-            player.x + player.width > this.x + 10 &&
+            player.x < this.x + this.width - COLLISION_PADDING &&
+            player.x + player.width > this.x + COLLISION_PADDING &&
             player.y < this.y + this.height &&
             player.y + player.height > this.y
         );
@@ -163,16 +166,20 @@ function drawGround() {
     }
 }
 
-// Clouds
+// Clouds - Initialize after canvas is sized
 const clouds = [];
-for (let i = 0; i < 5; i++) {
-    clouds.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * 100 + 20,
-        width: 60 + Math.random() * 40,
-        speed: 0.5 + Math.random() * 0.5
-    });
+function initializeClouds() {
+    clouds.length = 0; // Clear existing clouds
+    for (let i = 0; i < 5; i++) {
+        clouds.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * 100 + 20,
+            width: 60 + Math.random() * 40,
+            speed: 0.5 + Math.random() * 0.5
+        });
+    }
 }
+initializeClouds();
 
 function drawClouds() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
