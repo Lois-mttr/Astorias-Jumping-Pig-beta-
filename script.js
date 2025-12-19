@@ -101,7 +101,7 @@ function update() {
 }
 
 function handleKeyDown(ev) {
-    if (ev.code === 'Space' || ev.keyCode === 32) {
+    if (ev.code === 'Space' || ev.keyCode === 32 || ev.code === 'ArrowUp') {
         saltar();
     }
     // tecla para agacharse: ArrowDown o Control
